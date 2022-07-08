@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-import timedelta
+import datetime
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -81,8 +81,12 @@ WSGI_APPLICATION = 'new_blog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'USER': 'puryjbxpuqgwwh',
+        'NAME': 'dbijrtt4h3041a',
+        'PASSWORD':'5c8652626b783d5b89ef00b8504198cf2e1ebc6586f86e9d6d990e237da826fd',
+        'HOST':'ec2-34-247-72-29.eu-west-1.compute.amazonaws.com',
+        
     }
 }
 
@@ -114,8 +118,8 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
-    'REFRESH TOKEN_LIFETIME': timedelta(days=1),
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=5),
+    'REFRESH TOKEN_LIFETIME': datetime.timedelta(days=1),
 }
 
 
